@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1 style="color: #ff9100;">Spooky Scary Helloween</h1>
+    <hr style="color: white">
+    <h2 style="color: white">Страшно?? И правильно!</h2>
+    <img src="img/halloween.jpg" alt="Три тыковки" width="1000" class="center">
+    <h2 style="color: white">Нечисть со всей округи! Восстаньте и идите на зов!</h2>
+    <img src="img/cat.png" alt="Артур Морган" width="300" class="center">
+    <h2 style="color: white">Этапы нашего жуткого, но очень симпатишного праздника</h2>
+    <ol style="color: white;">
+        <li>Знакомство со всеми злыднями</li>
+        <li>Добрая и Злая еда</li>
+        <li>Подвижные конкурсы</li>
+        <li>Танцы маленьких скелетов</li>
+        <li>Хиханьки да Хаханьки</li>
+    </ol>
+    <h2 style="color: white">Идеи для Ваших костюмов</h2>
+    <div style="text-align: center;">
+        <a href="https://ru.pinterest.com/search/pins/?q=halloween%20costumes&rs=typed" style="color: #ff9100;">Pinterest</a>
+        <a href="https://www.ozon.ru/category/kostyum-na-hellouin/?__rr=1" style="color: #2600ff;">Ozon</a>
+        <a href="https://www.wildberries.ru/catalog/tags/dlja-helloween" style="color: #ff00f2;">Wildberries</a>
+    </div>
+
+    <h2 style="color: white; text-align: center;">Таблица персонажей</h2>
+    <table id="characterTable" border="1" style="color: white; border-color: #ff0000; margin: 0 auto;">
+        <caption style="color: #ff0000;">Армия нечисти</caption>
+        <tr>
+            <td>Никнейм</td>
+            <td>Персонаж</td>
+            <td>Типаж</td>
+        </tr>
+        <tr>
+            <td>Кот</td>
+            <td>Вампир</td>
+            <td>Нежить</td>
+        </tr>
+        <tr>
+            <td>Алиса</td>
+            <td>Харли Куинн</td>
+            <td>Злодей</td>
+        </tr>
+    </table>
+
+    <h2 style="color: white; text-align: center;">Присоединяйся к нашей Армии нечисти!</h2>
+    <form id="joinForm">
+        <label for="nickname">Никнейм:</label><br>
+        <input type="text" id="nickname" placeholder="Введи свой никнейм" required autocomplete="off"><br><br>
+        
+        <label for="character">Персонаж:</label><br>
+        <input type="text" id="character" placeholder="Опиши своего персонажа" required autocomplete="off"><br><br>
+        
+        <label for="type">Типаж:</label><br>
+        <select id="type" required>
+            <option value="">Выбери типаж (Нежить, Злодей или Другое)</option>
+            <option value="Нежить">Нежить</option>
+            <option value="Злодей">Злодей</option>
+            <option value="Другое">Другое</option>
+        </select><br><br>
+        
+        <label for="comments">Комментарии:</label><br>
+        <textarea id="comments" placeholder="Будут ли комментарии перед твоей участью?" autocomplete="off"></textarea><br><br>
+        
+        <button type="button" id="submitBtn">Отправить заявку</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('joinForm');
+        const table = document.getElementById('characterTable');
+        const submitBtn = document.getElementById('submitBtn');
+
+        submitBtn.addEventListener('click', function() {
+            const nickname = document.getElementById('nickname').value.trim();
+            const character = document.getElementById('character').value.trim();
+            const type = document.getElementById('type').value;
+            const comments = document.getElementById('comments').value.trim();
+
+            if (!nickname || !character || !type) {
+                alert('Пожалуйста, заполни все поля!');
+                return;
+            }
+
+            const rows = table.rows;
+            for (let i = 1; i < rows.length; i++) {
+                if (rows[i].cells[0].textContent.toLowerCase() === nickname.toLowerCase()) {
+                    alert('Этот никнейм уже занят! Выбери другой.');
+                    return;
+                }
+            }
+
+            const newRow = table.insertRow(-1);
+            newRow.title = comments ? 'Комментарии: ' + comments : '';
+
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            const cell3 = newRow.insertCell(2);
+
+            cell1.textContent = nickname;
+            cell2.textContent = character;
+            cell3.textContent = type;
+
+            form.reset();
+
+            alert('Заявка добавлена в таблицу! Наведи курсор на строку, чтобы увидеть комментарии.');
+        });
+    </script>
+
+    <h3 style="color: white">Специальные символы</h2>
+    <div style="color:white;"> &copy; Smetana & Co </div><br>
+    <div style="color:white;"> &sect; Группа 5301-440305D</div><br>
+</body>
+</html>

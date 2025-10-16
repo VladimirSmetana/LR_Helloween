@@ -1,0 +1,114 @@
+@font-face {
+  font-family: 'Alagard';
+  src: url('../fonts/alagard.ttf');
+}
+
+body {
+  background-image: url('../img/background.jpg');
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  color: white;
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #ff9100;
+  font-family: 'Alagard', sans-serif;
+  font-size: 70px;
+  text-align: center;
+}
+
+h2 {
+  color: #ff9100;
+  font-family: 'Alagard', sans-serif;
+  text-align: center;
+}
+
+li {
+  color: #ff9100;
+  font-family: 'Alagard', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  font-style: italic;
+}
+
+a {
+  text-align: center;
+  margin: 0 10px;
+}
+
+ol {
+  text-align: center;
+  list-style-position: inside;
+}
+
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+
+.center {
+  display: block;
+  margin: 0 auto;
+}
+
+#joinForm {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border: 1px solid #ff9100;
+  border-radius: 10px;
+}
+
+#joinForm label {
+  color: #ff9100;
+}
+
+#joinForm input, #joinForm select, #joinForm textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  background-color: #333;
+  color: white;
+  border: 1px solid #ff0000;
+  border-radius: 5px;
+}
+
+#joinForm button {
+  background-color: #ff9100;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+#joinForm button:hover {
+  background-color: #ff0000;
+}
+
+table {
+  color: white;
+  border-color: #ff0000;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+table tr:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+caption {
+  color: #ff0000;
+}
+
+hr {
+  color: white;
+}
